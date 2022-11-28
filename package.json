@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "My simple portfolio website.",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "@parcel/transformer-css": {
+    "drafts": {
+      "nesting": true
+    }
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "author": "Luis Cedillo",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.8.0",
+    "prettier": "^2.8.0"
+  }
+}
