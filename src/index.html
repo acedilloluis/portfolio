@@ -7,19 +7,19 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="images/apple-touch-icon.png"
+      href="./images/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="images/favicon-32x32.png"
+      href="./images/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="images/favicon-16x16.png"
+      href="./images/favicon-16x16.png"
     />
     <link rel="manifest" href="manifest.json" />
     <link rel="stylesheet" href="styles.css" />
@@ -27,3 +27,65 @@
     <title>Luis Cedillo - Front-end Developer</title>
   </head>
 </html>
+<body>
+  <header id="home">
+    <!--logo goes here-->
+    <strong>Luis Cedillo</strong>
+    <!--hamburger menu goes here-->
+  </header>
+  <!--
+        For mobile menu nav element should be hidden until user clicks menu btn then it should use a
+        transition and appear below the header bar containing logo, name, & menu btn
+        For desktop menu nav element should be visible in header (horizontal design) with logo & name
+  -->
+  <nav>
+    <menu>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
+    </menu>
+  </nav>
+
+  <main>
+    <header>
+      <h1>Hi. I'm Luis, a self-taught front-end developer.</h1>
+      <p>
+        Currently I'm working on perfecting my responsive web-design and React
+        skills.
+      </p>
+    </header>
+
+    <section id="#portfolio">
+      <header>
+        <h2>Portfolio</h2>
+        <p>Here are some of my projects.</p>
+      </header>
+
+      <div>
+        <!--project goes here; add as many as needed-->
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        My name is Luis Cedillo. I'm a self-taught front-end developer. I
+        started working with
+        <abbr title="HyperText Markup Language">HTML</abbr> and
+        <abbr title="Cascading Style Sheets">CSS</abbr> in 2015 when I took a
+        web development course in high school. For a little while after the
+        course I continued to build small websites, but did not really delve any
+        deeper into front-end development. My journey started up again almost 7
+        years later when I decided to dive head-first into the field.
+      </p>
+      <p>
+        Now I'm focusing on learning mobile-first, responsive web-design as well
+        as JavaScript. My goal is to create fast, easy to use and accessible
+        websites and web apps. To this end, I'm comfortable working with
+        <abbr title="HyperText Markup Language 5">HTML5</abbr>,
+        <abbr title="Cascading Style Sheets 3">CSS 3</abbr> and
+        JavaScript/React.
+      </p>
+    </section>
+  </main>
+</body>
