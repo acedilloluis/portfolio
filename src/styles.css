@@ -19,6 +19,24 @@ body {
   padding: 0;
 }
 
+.card {
+  background: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+  transition: box-shadow 0.3s;
+  margin-bottom: 1rem; /* remove when turning portfolio into grid */
+  padding: 0.5rem;
+
+  & h3 {
+    font-size: 1.05rem;
+    text-align: center;
+  }
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
 .img {
   height: auto;
   max-width: 100%;
@@ -38,17 +56,17 @@ body {
   color: var(--raisin-black);
 }
 
+h1,
+h2 {
+  color: var(--liberty);
+}
+
 body > header {
   grid-column: 2 / 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 1rem;
-
-  & > strong {
-    color: var(--liberty);
-    font-size: 1.5rem;
-  }
 
   & > button {
     background: transparent;
@@ -67,7 +85,7 @@ nav {
   margin: 0;
   text-align: center;
   transform: translateX(50%);
-  transition: transform 0.5s linear;
+  transition: transform 0.75s ease-in-out;
 
   & > menu {
     list-style-type: none;

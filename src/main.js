@@ -1,5 +1,6 @@
 const menuBtn = document.querySelector('#home>button');
 const mobileMenu = document.querySelector('body>nav');
+const homeLink = document.querySelector('body>nav a');
 let isMenuOpen = false;
 
 function undoTranslateX(undo) {
@@ -8,15 +9,22 @@ function undoTranslateX(undo) {
     : (mobileMenu.style.transform = '');
 }
 
+mobileMenu.addEventListener('transitionend', (e) => {
+  // Wait to hide mobile nav until transform ends when user closes mobile nav
+  if (e.propertyName === 'transform' && !isMenuOpen) {
+    mobileMenu.classList.add('visually-hidden');
+  }
+  if (e.propertyName === 'transform' && isMenuOpen) {
+    homeLink.focus({ preventScroll: true, focusVisible: true });
+  }
+});
+
 menuBtn.addEventListener('click', () => {
   if (isMenuOpen) {
     undoTranslateX(false);
-    setTimeout(() => {
-      mobileMenu.classList.add('visually-hidden');
-    }, 550);
   } else {
     mobileMenu.classList.remove('visually-hidden');
-    setTimeout(undoTranslateX, 5, true);
+    setTimeout(undoTranslateX, 3, true);
   }
   isMenuOpen = !isMenuOpen;
 });
