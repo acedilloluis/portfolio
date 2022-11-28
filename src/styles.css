@@ -66,6 +66,8 @@ nav {
   background: var(--lavender-gray);
   margin: 0;
   text-align: center;
+  transform: translateX(50%);
+  transition: transform 0.5s linear;
 
   & > menu {
     list-style-type: none;
