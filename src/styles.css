@@ -31,10 +31,16 @@ body {
     font-size: 1.05rem;
     text-align: center;
   }
+
+  & > div {
+    transform: translateY(-20%);
+    transition: transform 0.75s ease-in-out;
+  }
 }
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .img {
@@ -72,10 +78,6 @@ body > header {
     background: transparent;
     border: none;
     cursor: pointer;
-  }
-
-  & path {
-    fill: var(--liberty);
   }
 }
 
