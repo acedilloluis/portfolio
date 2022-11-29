@@ -30,31 +30,29 @@ menuBtn.addEventListener('click', () => {
   isMenuOpen = !isMenuOpen;
 });
 
-// For info containers of cards
 const cards = document.querySelectorAll('div.card');
-const infos = document.querySelectorAll('div.card>div');
-let isInfoOpen = Array(infos.length).fill(false);
-
-function undoTranslateY(undo, i) {
-  undo
-    ? (infos[i].style.transform = 'translateY(0)')
-    : (infos[i].style.transform = '');
-}
+const cardInfos = document.querySelectorAll('div.card>p');
+const isInfoOpen = Array(cardInfos.length).fill(false);
 
 for (let i = 0; i < cards.length; i++) {
-  infos[i].addEventListener('transitionend', (e) => {
-    if (e.propertyName === 'transform' && !isInfoOpen[i]) {
-      infos[i].classList.add('visually-hidden');
-    }
-  });
-
   cards[i].addEventListener('click', () => {
     if (isInfoOpen[i]) {
-      undoTranslateY(false, i);
+      cardInfos[i].classList.add('visually-hidden');
     } else {
-      infos[i].classList.remove('visually-hidden');
-      setTimeout(undoTranslateY, 3, true, i);
+      cardInfos[i].classList.remove('visually-hidden');
     }
     isInfoOpen[i] = !isInfoOpen[i];
+  });
+
+  // make card open info when user hits enter while card is focused
+  cards[i].addEventListener('keydown', (e) => {
+    if (e.keyCode === 13) {
+      if (isInfoOpen[i]) {
+        cardInfos[i].classList.add('visually-hidden');
+      } else {
+        cardInfos[i].classList.remove('visually-hidden');
+      }
+      isInfoOpen[i] = !isInfoOpen[i];
+    }
   });
 }
