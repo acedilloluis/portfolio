@@ -1,7 +1,7 @@
 // For mobile nav menu
 const menuBtn = document.querySelector('#home>button');
-const mobileMenu = document.querySelector('body>nav');
-const homeLink = document.querySelector('body>nav a');
+const mobileMenu = document.querySelector('body>header>nav');
+const homeLink = document.querySelector('body>header>nav a');
 let isMenuOpen = false;
 
 function undoTranslateX(undo) {

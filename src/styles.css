@@ -69,6 +69,7 @@ h2 {
 body > header {
   grid-column: 2 / 2;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin-top: 1rem;
@@ -80,10 +81,12 @@ body > header {
   }
 }
 
-nav {
+header > nav {
   grid-column: 2 / 2;
+  flex: 100%;
   background: var(--lavender-gray);
   margin: 0;
+  margin-top: 0.5rem;
   text-align: center;
   transform: translateX(50%);
   transition: transform 0.75s ease-in-out;
@@ -159,6 +162,25 @@ footer {
 @media (min-width: 1076px) {
   body {
     grid-template-columns: 20% 1fr 20%;
+  }
+
+  header > button {
+    display: none;
+  }
+
+  header > nav {
+    display: inline !important;
+    flex: initial;
+    background: transparent;
+    transform: translateX(0);
+
+    & li {
+      display: inline;
+    }
+
+    & a:hover {
+      color: var(--liberty);
+    }
   }
 
   footer {
