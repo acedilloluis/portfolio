@@ -29,30 +29,3 @@ menuBtn.addEventListener('click', () => {
   }
   isMenuOpen = !isMenuOpen;
 });
-
-const cards = document.querySelectorAll('div.card');
-const cardInfos = document.querySelectorAll('div.card>p');
-const isInfoOpen = Array(cardInfos.length).fill(false);
-
-for (let i = 0; i < cards.length; i++) {
-  cards[i].addEventListener('click', () => {
-    if (isInfoOpen[i]) {
-      cardInfos[i].classList.add('visually-hidden');
-    } else {
-      cardInfos[i].classList.remove('visually-hidden');
-    }
-    isInfoOpen[i] = !isInfoOpen[i];
-  });
-
-  // make card open info when user hits enter while card is focused
-  cards[i].addEventListener('keydown', (e) => {
-    if (e.keyCode === 13) {
-      if (isInfoOpen[i]) {
-        cardInfos[i].classList.add('visually-hidden');
-      } else {
-        cardInfos[i].classList.remove('visually-hidden');
-      }
-      isInfoOpen[i] = !isInfoOpen[i];
-    }
-  });
-}
